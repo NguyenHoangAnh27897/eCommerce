@@ -3,83 +3,110 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using eCommerce.Models;
 
 namespace eCommerce.Controllers
 {
     public class ProductController : Controller
     {
+        DochoiSMEntities db = new DochoiSMEntities();
         //
         // GET: /Product/
-        public ActionResult SMSet()
+        public ActionResult AllProduct()
         {
             return View();
+        }
+
+        public ActionResult SaleProduct()
+        {
+            return View();
+        }
+        public ActionResult SMSet()
+        {
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 1).OrderByDescending(s=>s.CreateDate).ToList();
+            return View(lst);
         }
 
         public ActionResult SMAccessory()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 2).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
 
         public ActionResult VibTR()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 3).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
 
         public ActionResult VibMR()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 4).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
 
         public ActionResult AnalButt()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 5).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
 
         public ActionResult AnalBead()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 6).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
 
         public ActionResult TailFox()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 7).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
 
         public ActionResult TailDog()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 8).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
         public ActionResult Paddle()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 9).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
         public ActionResult Whip()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 10).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
         public ActionResult Cane()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 11).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
         public ActionResult FakeDildo()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 12).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
         public ActionResult BlockDildo()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 13).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
         public ActionResult Strapon()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 14).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
         public ActionResult BallGag()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 15).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
         public ActionResult RungGag()
         {
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductTypeID == 16).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
 	}
 }

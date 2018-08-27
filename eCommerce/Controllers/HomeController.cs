@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using eCommerce.Models;
 
 namespace eCommerce.Controllers
 {
     public class HomeController : Controller
     {
+        DochoiSMEntities db = new DochoiSMEntities();
         public ActionResult Index()
         {
-            return View();
+            var lst = db.SM_Product.Where(s=>s.IsSale == false).OrderByDescending(s => s.CreateDate).ToList();
+            return View(lst);
         }
 
-        public ActionResult About()
+        [HttpGet]
+        public ActionResult Search(string search = "")
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var lst = db.SM_Product.Where(s => s.ProductName.Contains(search)).ToList();
+            return View(lst);
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
