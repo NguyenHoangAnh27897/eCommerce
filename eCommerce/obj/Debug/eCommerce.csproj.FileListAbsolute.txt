@@ -80,3 +80,7 @@ D:\LAPTRINH\eCommerce\eCommerce\bin\Antlr3.Runtime.pdb
 D:\LAPTRINH\eCommerce\eCommerce\obj\Debug\eCommerce.csprojResolveAssemblyReference.cache
 D:\LAPTRINH\eCommerce\eCommerce\obj\Debug\eCommerce.dll
 D:\LAPTRINH\eCommerce\eCommerce\obj\Debug\eCommerce.pdb
+D:\LAPTRINH\eCommerce\eCommerce\bin\PagedList.dll
+D:\LAPTRINH\eCommerce\eCommerce\bin\PagedList.Mvc.dll
+D:\LAPTRINH\eCommerce\eCommerce\bin\PagedList.xml
+D:\LAPTRINH\eCommerce\eCommerce\bin\PagedList.Mvc.xml

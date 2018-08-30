@@ -1,4 +1,5 @@
-﻿
+﻿@model PagedList.IPagedList<eCommerce.Models.SM_Product>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutBackend.cshtml";
@@ -31,26 +32,23 @@
 
   
         @*<tr class="@(item.Status_ID == 3 ? "success" : "") @(item.Status_ID == 1 ? "warning" : "") @(item.Status_ID == 2 ? "info" : "") @(item.Status_ID == 4 ? "danger" : "")">*@
-    <tr>
-            <td>
-               
-            </td>
-            <td>
-                
-            </td>
-            <td>
-              
-            </td>
+      @foreach (var item in Model)
+      {
+        <tr>
+            <td>@item.ProductName</td>
+            <td>@item.Price</td>
+            <td>@item.Discount</td>
 
-            <td>
-               
-            </td>
+            <td>@item.Images</td>
 
-            <td>
-             
-            </td>
+            <td>@item.CreateDate</td>
 
-        <td></td>
+            <td>@item.Status</td>
         </tr>
+      }
+    
 </table>
-
+<br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+                                             new { page }))
