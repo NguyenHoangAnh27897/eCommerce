@@ -39,13 +39,13 @@
                     <script defer src="/Content/js/jquery.flexslider.js"></script>
                     <link rel="stylesheet" href="/Content/css/flexslider.css" type="text/css" media="screen" />
                     <script>
-					// Can also be used with $(document).ready()
-					$(window).load(function() {
-					  $('.flexslider').flexslider({
-						animation: "slide",
-						controlNav: "thumbnails"
-					  });
-					});
+                        // Can also be used with $(document).ready()
+                        $(window).load(function () {
+                            $('.flexslider').flexslider({
+                                animation: "slide",
+                                controlNav: "thumbnails"
+                            });
+                        });
                     </script>
                     <!-- flexslider -->
                     <!-- zooming-effect -->
@@ -55,9 +55,9 @@
                 <div class="col-md-8 agileinfo_single_right">
                     <h2>@Model.FirstOrDefault().ProductName</h2>
                     <div class="w3agile_description">
-                        <h4>Description :</h4>
+                        <h4>Phân loại :</h4>
                         <p>
-                           @Model.FirstOrDefault().Description
+                            @Model.FirstOrDefault().Description
                         </p>
                         <br />
                         <div class="color-quality">
@@ -66,7 +66,7 @@
                                 <ul>
                                     <li><a id="red" href="#" onclick="changeImageRed()"><span></span></a></li>
                                     <li><a id="pink" onclick="" class="brown"><span></span></a></li>
-                                    <li><a id="purple" onclick=""  class="purple"><span></span></a></li>
+                                    <li><a id="purple" onclick="" class="purple"><span></span></a></li>
                                     <li><a id="blue" onclick="" class="gray"><span></span></a></li>
                                 </ul>
                             </div>
@@ -81,17 +81,17 @@
                                 </div>
                                 <!--quantity-->
                                 <script>
-								$('.value-plus1').on('click', function(){
-									var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)+1;
-									divUpd.text(newVal);
-									$('input[name="quantity"]').val(newVal);
-								});
+                                    $('.value-plus1').on('click', function () {
+                                        var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10) + 1;
+                                        divUpd.text(newVal);
+                                        $('input[name="quantity"]').val(newVal);
+                                    });
 
-								$('.value-minus1').on('click', function(){
-									var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)-1;
-									if (newVal >= 1) divUpd.text(newVal);
-									$('input[name="quantity"]').val(newVal);
-								});
+                                    $('.value-minus1').on('click', function () {
+                                        var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10) - 1;
+                                        if (newVal >= 1) divUpd.text(newVal);
+                                        $('input[name="quantity"]').val(newVal);
+                                    });
                                 </script>
                                 <!--quantity-->
 
@@ -101,7 +101,28 @@
                     </div>
                     <div class="snipcart-item block">
                         <div class="snipcart-thumb agileinfo_single_right_snipcart">
-                            <h3 class="m-sing" style="font-size:xx-large">Giá tiền: @Model.FirstOrDefault().Price VND @if (Model.FirstOrDefault().IsSale == true) {<span>@Model.FirstOrDefault().Discount</span> }</h3>
+                            @if (Model.FirstOrDefault().IsSale == true)
+                            {
+                                <h3 class="m-sing" style="font-size:xx-large">
+                                    Giá: @string.Format("{0:n0}", Model.FirstOrDefault().Price) VND
+                                    <br />
+                                    <br />
+                                    <span>Giảm còn: @Model.FirstOrDefault().Discount</span>
+                                </h3>
+                            }
+                            else
+                            {
+                                <h3 class="m-sing" style="font-size:xx-large">
+                                    Giá: @string.Format("{0:n0}", Model.FirstOrDefault().Price) VND
+                                </h3>
+                            }
+
+                        </div>
+                        <div class="snipcart-info agileinfo_single_right_snipcart">
+                                <h3 class="m-sing" style="font-size:xx-large">Thông tin sản phẩm:</h3>
+                                <div class="table_productinfo">
+                                    <p>...</p>
+                                </div>
                         </div>
                         <div class="snipcart-details agileinfo_single_right_details">
                             <form action="#" method="post">
@@ -114,15 +135,21 @@
                                     <input type="hidden" name="currency_code" value="VND">
                                     <input type="hidden" name="quantity" value="">
                                     <input type="hidden" name="cancel_return" value="">
-                                    <input type="submit" name="submit" value="Add to cart" class="button">
+                                    <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button">
                                 </fieldset>
                             </form>
                         </div>
                     </div>
+
+
                 </div>
-                <div class="clearfix"> </div>
             </div>
+                <div class="clearfix"> </div>
         </div>
+
+
+
+    </div>
     </div>
     <!-- new -->
     <div class="newproducts-w3agile">

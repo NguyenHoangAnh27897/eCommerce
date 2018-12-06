@@ -104,7 +104,7 @@
                                                         <div class="snipcart-thumb">
                                                             <a href="/detailproduct/detail/@Model.Skip(i).FirstOrDefault().ID"><img title="" alt="" style="height: 150px; width:150px" src="/images/avatar/@Model.Skip(i).FirstOrDefault().Avatar" /></a>
                                                             <p>@Model.Skip(i).FirstOrDefault().ProductName</p>
-                                                            <h4>@Model.Skip(i).FirstOrDefault().Price VND</h4>
+                                                            <h4>@string.Format("{0:n0}", Model.Skip(i).FirstOrDefault().Price) VND</h4>
                                                         </div>
                                                     </div>
                                                 </figure>
@@ -127,7 +127,7 @@
                                                         <div class="snipcart-thumb">
                                                             <a href="/detailproduct/detail/@Model.Skip(i).FirstOrDefault().ID"><img title="" alt="" style="height: 150px; width:150px;" src="/images/avatar/@Model.Skip(i).FirstOrDefault().Avatar" /></a>
                                                             <p>@Model.Skip(i).FirstOrDefault().ProductName</p>
-                                                            <h4>@Model.Skip(i).FirstOrDefault().Price VND</h4>
+                                                            <h4>@string.Format("{0:n0}", Model.Skip(i).FirstOrDefault().Price) VND</h4>
                                                         </div>
                                                     </div>
                                                 </figure>
@@ -152,7 +152,7 @@
                                                         <div class="snipcart-thumb">
                                                             <a href="/detailproduct/detail/@lst.Skip(i).FirstOrDefault().ID"><img title="" alt="" style="height: 150px; width:150px" src="/images/avatar/@lst.Skip(i).FirstOrDefault().Avatar" /></a>
                                                             <p>@lst.Skip(i).FirstOrDefault().ProductName</p>
-                                                            <h4>@lst.Skip(i).FirstOrDefault().Discount VND <span>@lst.Skip(i).FirstOrDefault().Price VND</span> </h4>
+                                                            <h4>@string.Format("{0:n0}", lst.Skip(i).FirstOrDefault().Discount) VND <span>@string.Format("{0:n0}", lst.Skip(i).FirstOrDefault().Price) VND</span> </h4>
                                                         </div>
                                                     </div>
                                                 </figure>
@@ -175,7 +175,7 @@
                                                         <div class="snipcart-thumb">
                                                             <a href="/detailproduct/detail/@lst.Skip(i).FirstOrDefault().ID"><img title="" alt="" style="height: 150px; width:150px;" src="/images/avatar/@lst.Skip(i).FirstOrDefault().Avatar" /></a>
                                                             <p>@lst.Skip(i).FirstOrDefault().ProductName</p>
-                                                            <h4>@lst.Skip(i).FirstOrDefault().Discount VND <span>@lst.Skip(i).FirstOrDefault().Price VND</span> </h4>
+                                                            <h4>@string.Format("{0:n0}", lst.Skip(i).FirstOrDefault().Discount) VND <span>@string.Format("{0:n0}", lst.Skip(i).FirstOrDefault().Price) VND</span> </h4>
                                                         </div>
                                                     </div>
                                                 </figure>

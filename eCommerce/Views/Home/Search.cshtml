@@ -21,39 +21,39 @@
             <div class="categories">
                 <h2>Danh sách</h2>
                 <ul class="cate">
-                    <li><a href="products.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>Set &amp; Accessory</a></li>
+                    <li><a class="name"><i class="fa fa-arrow-right" aria-hidden="true"></i>Set &amp; Accessory</a></li>
                     <ul>
                         <li><a href="/product/smset"><i class="fa fa-arrow-right" aria-hidden="true"></i>Set SM</a></li>
                         <li><a href="/product/smaccessory"><i class="fa fa-arrow-right" aria-hidden="true"></i>Phụ kiện</a></li>
                     </ul>
-                    <li><a href="products.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>Vibrator</a>></li>
+                    <li><a class="name"><i class="fa fa-arrow-right" aria-hidden="true"></i>Vibrator</a></li>
                     <ul>
                         <li><a href="/product/vibtr"><i class="fa fa-arrow-right" aria-hidden="true"></i>Trứng rung</a></li>
                         <li><a href="/product/vibmr"><i class="fa fa-arrow-right" aria-hidden="true"></i>Máy rung</a></li>
                     </ul>
-                    <li><a href="products.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>Anal Toy</a></li>
+                    <li><a><i class="fa fa-arrow-right" aria-hidden="true"></i>Anal Toy</a></li>
                     <ul>
                         <li><a href="/product/analbutt"><i class="fa fa-arrow-right" aria-hidden="true"></i>Butt Plug</a></li>
                         <li><a href="/product/analbead"><i class="fa fa-arrow-right" aria-hidden="true"></i>Anal Beads</a></li>
                     </ul>
-                    <li><a href="products.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>SM Tails</a></li>
+                    <li><a><i class="fa fa-arrow-right" aria-hidden="true"></i>SM Tails</a></li>
                     <ul>
                         <li><a href="/product/tailfox"><i class="fa fa-arrow-right" aria-hidden="true"></i>Đuôi cáo</a></li>
-                        <li><a href="/product/taildog"><i class="fa fa-arrow-right" aria-hidden="true"></i>Đuôi thỏ/ chó</a></li>
+                        <li><a href="/product/taildog"><i class="fa fa-arrow-right" aria-hidden="true"></i>Đuôi chó</a></li>
                     </ul>
-                    <li><a href="products.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>Paddle/Whip/Cane</a></li>
+                    <li><a><i class="fa fa-arrow-right" aria-hidden="true"></i>Paddle/Whip/Cane</a></li>
                     <ul>
                         <li><a href="/product/paddle"><i class="fa fa-arrow-right" aria-hidden="true"></i>Paddle</a></li>
                         <li><a href="/product/whip"><i class="fa fa-arrow-right" aria-hidden="true"></i>Whip</a></li>
                         <li><a href="/product/cane"><i class="fa fa-arrow-right" aria-hidden="true"></i>Cane</a></li>
                     </ul>
-                    <li><a href="products.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>Dildo/Chastity</a></li>
+                    <li><a><i class="fa fa-arrow-right" aria-hidden="true"></i>Dildo/Chastity</a></li>
                     <ul>
                         <li><a href="/product/fakedildo"><i class="fa fa-arrow-right" aria-hidden="true"></i>DV giả</a></li>
                         <li><a href="/product/blockdildo"><i class="fa fa-arrow-right" aria-hidden="true"></i>Khóa DV</a></li>
                         <li><a href="/product/strapon"><i class="fa fa-arrow-right" aria-hidden="true"></i>Strap-on</a></li>
                     </ul>
-                    <li><a href="products.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>Gag</a></li>
+                    <li><a><i class="fa fa-arrow-right" aria-hidden="true"></i>Gag</a></li>
                     <ul>
                         <li><a href="/product/ballgag"><i class="fa fa-arrow-right" aria-hidden="true"></i>Ball gag</a></li>
                         <li><a href="/product/runggag"><i class="fa fa-arrow-right" aria-hidden="true"></i>Rung gag</a></li>
@@ -66,38 +66,40 @@
                 <div class="products-right-grids">
                     <div class="sorting">
                         <select id="country" onchange="change_country(this.value)" class="frm-field required sect">
-                            <option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Default sorting</option>
-                            <option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by popularity</option>
-                            <option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by average rating</option>
-                            <option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by price</option>
+                            <option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp xếp theo mặc định</option>
+                            <option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp xếp theo độ phổ biến</option>
+                            <option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp xếp theo giá</option>
                         </select>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
             </div>
-            @foreach(var item in Model)
-            {
-            <div class="agile_top_brands_grids">
-                <div class="col-md-4 top_brand_left">
-                    <div class="hover14 column">
-                        <div class="agile_top_brand_left_grid">
-                            <div class="agile_top_brand_left_grid1">
-                                <figure>
-                                    <div class="snipcart-item block">
-                                        <div class="snipcart-thumb">
-                                            <a href="/detailproduct/detail/@item.ID"><img title="" style="height: 200px; width:200px;" alt="" src="/images/avatar/@item.Avatar"></a>
-                                            <p>@item.ProductName</p>
-                                            <h4>@item.Price VND</h4>
+
+
+            <div class="agile_top_brands_grids" style="margin-bottom: 15px">
+                @for (int i = 0; i < 9; i++)
+                {
+                    <div class="col-md-4 top_brand_left" style="margin-bottom: 10px">
+                        <div class="hover14 column">
+                            <div class="agile_top_brand_left_grid">
+                                <div class="agile_top_brand_left_grid1">
+                                    <figure>
+                                        <div class="snipcart-item block">
+                                            <div class="snipcart-thumb">
+                                                <a href="/detailproduct/detail/@Model.Skip(i).FirstOrDefault().ID"><img title="" alt="" style="height: 150px; width:150px;" src="/images/avatar/@Model.Skip(i).FirstOrDefault().Avatar" /></a>
+                                                <p>@Model.Skip(i).FirstOrDefault().ProductName</p>
+                                                <h4>@string.Format("{0:n0}", Model.Skip(i).FirstOrDefault().Price) VND</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                </figure>
+                                    </figure>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                }
                 <div class="clearfix"> </div>
             </div>
-            }
+
             <nav class="numbering">
                 <ul class="pagination paging">
                     <li>

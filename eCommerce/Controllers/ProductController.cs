@@ -108,5 +108,6 @@ namespace eCommerce.Controllers
             var lst = db.SM_Product.Where(s => s.ProductTypeID == 16).OrderByDescending(s => s.CreateDate).ToList();
             return View(lst);
         }
+        
 	}
 }

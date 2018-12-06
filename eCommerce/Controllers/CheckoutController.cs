@@ -109,7 +109,7 @@ namespace eCommerce.Controllers
             return View(lst);
         }
         [HttpGet]
-        public async Task<ActionResult> SendEmail(string name, string email, string phone, string address, string district, string city, string gridRadios)
+        public async Task<ActionResult> SendEmail(string name, string email, string phone, string address, string district, string city, string gridRadios, string tp)
         {
             string session = Session["OrderSession"].ToString();
             var lst = db.SM_Order.Where(s => s.SessionOrder == session).ToList();
@@ -129,9 +129,27 @@ namespace eCommerce.Controllers
                 payment = "Thanh toán khi nhận hàng";
             }else if (gridRadios == "option2")
             {
-                payment = "Thanh toán chuyển khoản";
+                payment = "Ship tốc hành bằng LalaMove";
+            }else if(gridRadios == "option3")
+            {
+                payment = "Chuyển khoản trước";
+            }else if(gridRadios == "option4")
+            {
+                payment = "Khu vực 1";
+            }else if(gridRadios == "option5")
+            {
+                payment = "Khu vực 2";
+            }else if (gridRadios == "option6")
+            {
+                payment = "Khu vực 3";
             }
-            message.Body = string.Format(body, "Đồ chơi SM", "smdochoi@gmail.com", @"Thông tin đơn hàng: "+"<br>" +" Tên khách hàng: " + name+ "<br> Số điện thoại: " + phone+ "<br> Địa chỉ Email: " + email+ "<br> Địa chỉ nhận hàng: " + address+ "<br> Quận: " + district+ "<br> Thành phố: " + city +"<br> Hình thức thanh toán: "+payment+"<br> Thông tin giỏ hàng: "+product);
+
+            if (tp == "city1")
+            {
+               
+            }
+
+            message.Body = string.Format(body, "Đồ chơi SM", "smdochoi@gmail.com", @"Thông tin đơn hàng: "+"<br>" +" Tên khách hàng: " + name+ "<br> Số điện thoại: " + phone+ "<br> Địa chỉ Email: " + email+ "<br> Địa chỉ nhận hàng: " + address+ "<br> Quận: " + district+ "<br> Thành phố: " + city +"<br> Hình thức thanh toán: "+payment+"<br>+ Thông tin giỏ hàng: "+product);
             message.IsBodyHtml = true;
 
             using (var smtp = new SmtpClient())

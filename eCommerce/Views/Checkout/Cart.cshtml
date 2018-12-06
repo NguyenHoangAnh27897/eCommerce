@@ -3,6 +3,8 @@
 @{
     ViewBag.Title = "Cart";
     int stt = 1;
+    int? tomoney = 1;
+    int? total = 0;
 }
 
 <!-- checkout -->
@@ -23,21 +25,22 @@
                 </thead>
                 @foreach (var item in Model)
                 {
-                    <tr class="rem1">
-                        <td class="invert">@stt</td>
-                        <td class="invert-image"><img src="/images/avatar/@item.Avatar" alt="" class="img-responsive" /></td>
-                        <td class="invert">
-                            <div class="quantity">
-                                <div class="quantity-select">
-                                    <div class="entry value"><span>@item.Quantity</span></div>
-                                </div>
+                    tomoney = item.Price * item.Quantity;
+                    total = tomoney;
+                <tr class="rem1">
+                    <td class="invert">@stt</td>
+                    <td class="invert-image"><img src="/images/avatar/@item.Avatar" alt="" class="img-responsive" /></td>
+                    <td class="invert">
+                        <div class="quantity">
+                            <div class="quantity-select">
+                                <div class="entry value"><span>@item.Quantity</span></div>
                             </div>
-                        </td>
-                        <td class="invert">@item.PrductName</td>
-
-                        <td class="invert">@item.Price VND</td>
-                        <td class="invert">@item.Discount</td>            
-                    </tr>
+                        </div>
+                    </td>
+                    <td class="invert">@item.PrductName</td>
+                    <td class="invert">@string.Format("{0:n0}", total)</td>
+                    <td class="invert">@string.Format("{0:n0}", item.Discount)</td>
+                </tr>
                     stt++;
                 }
             </table>
